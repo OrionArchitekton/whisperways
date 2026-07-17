@@ -1,0 +1,18 @@
+{
+  "model": "gemini-2.5-flash-image",
+  "generatedAt": "2026-07-17T22:08:18.995Z",
+  "results": [
+    {
+      "name": "thumbnail",
+      "ok": true,
+      "file": "/home/orion/src/orion-estate/personal-brand/hackathons/whisperways/docs/thumbnail.png"
+    }
+  ],
+  "prompts": [
+    {
+      "name": "thumbnail",
+      "prompt": "A cinematic dark map poster for an aviation software product called Whisperways. Night aerial view of the Los Angeles basin rendered as a dark navy slate map with faint street grid glow. Two flight corridors arc across the city between two small vertiport beacons: one straight dashed amber line cutting through brightly glowing dense population clusters, and one smooth curved teal line sweeping around the glowing clusters through darker quiet areas. Soft warm orange population heat blooms under the amber line, calm dark terrain under the teal line. In the lower third, elegant serif title text reads WHISPERWAYS and beneath it a smaller clean sans-serif subtitle reads Noise-aware flight corridors. Subtle sound wave ripples emanate from the amber route only. High contrast, professional data-visualization aesthetic, no photographs of people, no aircraft close-ups, no logos, clean vector-like rendering, deep navy background.",
+      "aspectRatio": "16:9"
+    }
+  ]
+}
