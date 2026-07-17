@@ -34,7 +34,8 @@ describe("buildBriefPayload / buildBriefPrompt", () => {
     const prompt = buildBriefPrompt(payload);
     expect(prompt).toContain("Never invent numbers");
     expect(prompt).toContain("em dashes");
-    expect(prompt).toContain(String(payload.exposureReductionPct));
+    expect(prompt).toContain(String(payload.exposureIndexReductionPct));
+    expect(prompt).toContain("never be conflated");
     expect(prompt).toContain("Union Station DTLA");
   });
 });

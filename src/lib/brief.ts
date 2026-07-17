@@ -31,7 +31,10 @@ export interface BriefPayload {
     peopleAudible: number;
     landmarks: LandmarkExposure[];
   };
-  exposureReductionPct: number;
+  /** Drop in the population-weighted exposure index (person-dB), percent. */
+  exposureIndexReductionPct: number;
+  /** Drop in the count of people who can hear the aircraft, percent. */
+  peopleAudibleReductionPct: number;
   addedTimeMin: number;
 }
 
@@ -58,7 +61,11 @@ export function buildBriefPayload(cmp: LaComparison): BriefPayload {
       peopleAudible: Math.round(cmp.quiet.peopleAudible),
       landmarks: landmarksOnRoute(cmp.quietLine, s),
     },
-    exposureReductionPct: round1(cmp.exposureReductionPct),
+    exposureIndexReductionPct: round1(cmp.exposureReductionPct),
+    peopleAudibleReductionPct:
+      cmp.direct.peopleAudible > 0
+        ? round1((1 - cmp.quiet.peopleAudible / cmp.direct.peopleAudible) * 100)
+        : 0,
     addedTimeMin: round1(cmp.quiet.flightTimeMin - cmp.direct.flightTimeMin),
   };
 }
@@ -80,6 +87,7 @@ export function buildBriefPrompt(p: BriefPayload): string {
     "",
     "Field guidance:",
     "- summary: 2-3 sentences comparing the direct and quiet corridors.",
+    "- Two distinct metrics exist and must never be conflated: peopleAudibleReductionPct is the drop in how many people can hear the aircraft; exposureIndexReductionPct is the drop in the population-weighted exposure index. Attribute each percentage only to its own metric.",
     "- neighborhoods: one entry per place appearing in EITHER route's landmark list, loudest first (use the exact names given); text states what changes for that place between the two corridors using only the provided levels, e.g. audible under the direct route at its stated dBA versus removed from or reduced in the audible footprint under the quiet corridor.",
     "- tradeoff: the honest cost of the quiet corridor in minutes and distance.",
     "- commitments: 3-4 discussion topics.",

@@ -4,7 +4,7 @@
 LAX to Burbank at night: the amber direct route and the teal quiet corridor the engine found over real census population.
 
 02-metrics.png
-The trade, computed: 89 percent less population noise exposure for 4.3 extra minutes of flight time.
+The trade, computed: 77 percent fewer people audible, an 89 percent lower exposure index, for 4.3 extra minutes.
 
 03-brief.png
 Claude's community impact brief, grounded only in engine output: what Fairfax District hears under each corridor.

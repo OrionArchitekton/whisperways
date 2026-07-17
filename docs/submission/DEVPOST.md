@@ -33,7 +33,8 @@ exposure. For each you see distance, flight time, how many people can hear the
 aircraft above the ambient soundscape, and a population-weighted exposure
 index. The headline result: LAX to Hollywood Burbank at night, the direct
 route is audible to about 221,000 people; the quiet corridor cuts that to
-about 51,000 (an 89 percent exposure reduction) for 4.3 extra minutes.
+about 51,000 people (77 percent fewer), and cuts the population-weighted
+exposure index by 89 percent, for 4.3 extra minutes.
 
 Then Claude drafts the Community Impact Brief: a neighborhood-by-neighborhood
 account (Fairfax District, West Hollywood, Toluca Lake on the demo route) of
@@ -46,15 +47,15 @@ forbidden from inventing anything beyond them.
 - US Census Bureau 2020 tract centers of population (LA County, public
   domain), rasterized to a 250 m grid covering 5.3 million people.
 - A first-order acoustic model: published eVTOL overflight level (Joby S4,
-  about 45.2 dBA at 500 m, NASA/Joby 2022 flyover campaign) with geometric
+  about 45.2 dBA at 500 m, NASA/Joby acoustic flight campaign, results published 2022) with geometric
   spreading against day/night ambient baselines.
 - A routing engine that convolves population with the audible footprint kernel
   and runs Dijkstra, trading meters of detour against person-decibels.
 - One server route calls claude-opus-4-8 with a schema-constrained output for
   the brief. Next.js App Router, MapLibre GL, Vercel; the API key stays
   server-side and the endpoint is rate-limited (burst-verified 429s).
-- 28 unit and acceptance tests over the acoustics, routing, and real-city
-  results. Built end-to-end with Claude (Claude Fable 5 in Claude Code); the
+- 28 unit and acceptance tests over the acoustics, routing, real-city
+  results, and brief prompt/parsing. Built end-to-end with Claude (Claude Fable 5 in Claude Code); the
   Co-Authored-By trailers in the git history record it.
 
 ### Honesty notes

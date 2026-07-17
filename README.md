@@ -21,8 +21,9 @@ the one the community can live under.
 ## The headline number
 
 LAX to Burbank, night operations: the direct route is audible to about 221,000
-people. The quiet corridor cuts that to about 51,000 (89% less population noise
-exposure) for 4.3 extra minutes of flight time. Every number comes from the
+people. The quiet corridor cuts that to about 51,000 people (77% fewer), and
+cuts the population-weighted noise exposure index by 89%, for 4.3 extra minutes
+of flight time. Every number comes from the
 engine, computed over real census population data.
 
 ## Try it in 60 seconds
@@ -42,7 +43,7 @@ engine, computed over real census population data.
   public domain), rasterized to a 250 m grid covering 5.3M people
   (`scripts/build-la-grid.mjs`, provenance in `src/data/la-grid.json` meta).
 - **Acoustics**: first-order model. Published eVTOL overflight level (Joby S4,
-  about 45.2 dBA at 500 m, NASA/Joby 2022 flyover campaign) with geometric
+  about 45.2 dBA at 500 m, NASA/Joby acoustic flight campaign, results published 2022) with geometric
   spreading, against a day/night ambient baseline. This is a planning
   heuristic, not certification acoustics, and the UI says so.
 - **Routing**: a population-noise cost raster (population convolved with the

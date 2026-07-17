@@ -20,7 +20,7 @@ export interface Scenario {
   profile: AircraftNoiseProfile;
   /** Cruise altitude AGL in meters. */
   altitudeM: number;
-  /** Ambient soundscape in dBA (e.g. ~40 residential night, ~55 urban day). */
+  /** Ambient soundscape in dBA (e.g. ~40 residential night, ~50 urban day). */
   ambientDb: number;
   /** Cruise speed in m/s (used for flight-time estimates). */
   cruiseSpeedMps: number;

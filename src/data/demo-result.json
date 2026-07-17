@@ -1,7 +1,7 @@
 {
   "meta": {
     "note": "Genuine captured output: real engine run + one live claude-opus-4-8 call via the same prompt/schema as /api/brief. Frozen for demo-mode determinism; disclosed in README.",
-    "capturedAt": "2026-07-17T21:12:19.030Z",
+    "capturedAt": "2026-07-17T22:18:08.344Z",
     "model": "claude-opus-4-8"
   },
   "selection": {
@@ -1101,27 +1101,27 @@
     }
   },
   "brief": {
-    "summary": "The direct corridor from LAX Gateway to Hollywood Burbank covers 30.3 km in 8.4 minutes but leaves 221,225 people within the audible footprint at night. The quiet corridor covers 45.8 km in 12.7 minutes and reduces the number of people who can hear the aircraft to 50,750, an 88.8 percent reduction in exposure.",
+    "summary": "This brief compares two night corridors between LAX Gateway and Hollywood Burbank, both flown at 300 m against a 40 dBA ambient level. The direct corridor is 30.3 km and takes 8.4 minutes but leaves 221,225 people able to hear the aircraft, while the quiet corridor is 45.8 km and takes 12.7 minutes and lowers that to 50,750 people. Compared to the direct route, the quiet corridor reduces the number of people who can hear the aircraft by 77.1 percent and lowers the population-weighted exposure index by 88.8 percent.",
     "neighborhoods": [
       {
         "name": "Fairfax District",
-        "text": "Under the direct corridor, the aircraft passes as near as 379 m and is audible here at 45.5 dBA, which is 5.5 dBA above the 40 dBA ambient level. Under the quiet corridor, Fairfax District is not listed among the audible landmarks, so it is removed from the audible footprint."
+        "text": "Under the direct corridor, Fairfax District is audible at 45.5 dBA, with the aircraft passing about 379 m away and running 5.5 dBA above the 40 dBA ambient level. Under the quiet corridor, Fairfax District does not appear in the audible footprint."
       },
       {
         "name": "West Hollywood",
-        "text": "Under the direct corridor, the aircraft passes as near as 403 m and is audible here at 45.2 dBA, which is 5.2 dBA above the 40 dBA ambient level. Under the quiet corridor, West Hollywood is not listed among the audible landmarks, so it is removed from the audible footprint."
+        "text": "Under the direct corridor, West Hollywood is audible at 45.2 dBA, with the aircraft passing about 403 m away and running 5.2 dBA above the 40 dBA ambient level. Under the quiet corridor, West Hollywood does not appear in the audible footprint."
       },
       {
         "name": "Toluca Lake",
-        "text": "Under the direct corridor, the aircraft passes as near as 503 m and is audible here at 43.8 dBA, which is 3.8 dBA above the 40 dBA ambient level. Under the quiet corridor, Toluca Lake is not listed among the audible landmarks, so it is removed from the audible footprint."
+        "text": "Under the direct corridor, Toluca Lake is audible at 43.8 dBA, with the aircraft passing about 503 m away and running 3.8 dBA above the 40 dBA ambient level. Under the quiet corridor, Toluca Lake does not appear in the audible footprint."
       }
     ],
     "tradeoff": "The quiet corridor is honestly slower and longer. It adds 4.3 minutes of flight time, going from 8.4 minutes to 12.7 minutes, and it adds distance, going from 30.3 km to 45.8 km.",
     "commitments": [
-      "Discuss the cruising altitude to be flown over residential areas, using the planned 300 m level as a starting point for the conversation.",
-      "Discuss limits on hours of operation, especially for night flights, and how they affect nearby neighborhoods.",
-      "Discuss ongoing noise monitoring at ground level so measured sound can be compared with the published overflight estimates.",
-      "Discuss regular public reporting of flight counts, routes flown, and any complaints received from the community."
+      "Altitude practices: discussing what overflight altitudes would be maintained along the chosen corridor and how they relate to the audible footprint.",
+      "Operating hours: discussing when night flights would occur and any limits on scheduling to protect rest periods.",
+      "Noise monitoring: discussing how sound levels near listed neighborhoods would be measured and verified over time.",
+      "Reporting: discussing how results and any complaints would be shared with the neighborhood council on a regular basis."
     ]
   }
 }

@@ -102,9 +102,9 @@ export default function Planner({
         <header>
           <h1 className="font-display text-3xl tracking-tight">Whisperways</h1>
           <p className="mt-1 text-sm leading-snug text-slate-400">
-            Noise-aware flight corridors for the second century of flight.
-            Plan eVTOL routes over Los Angeles by who hears them, not just how
-            far they fly.
+            Pick two Los Angeles vertiports. Get the direct route, the quiet
+            route, how many people hear each, and a Claude-drafted community
+            impact brief grounded in the numbers.
           </p>
         </header>
 
@@ -184,8 +184,8 @@ export default function Planner({
                 -{plan.exposureReductionPct.toFixed(0)}%
               </p>
               <p className="text-sm text-slate-300">
-                population noise exposure, for +{fmtMin(addedMin)} of flight
-                time
+                population-weighted noise exposure, for +{fmtMin(addedMin)}
+                of flight time
               </p>
             </div>
             )}

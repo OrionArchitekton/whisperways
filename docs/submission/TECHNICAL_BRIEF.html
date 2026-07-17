@@ -140,7 +140,7 @@
       <div class="hero-panel">
         <div class="hero-stat"><div class="n amber">221,225</div><div class="l">people hear the DIRECT route: LAX to Hollywood Burbank, night ops, 8.4 min</div></div>
         <div class="hero-stat"><div class="n">50,750</div><div class="l">people hear the QUIET corridor the engine found: 12.7 min</div></div>
-        <div class="hero-stat"><div class="n">-88.8%</div><div class="l">population noise exposure, for +4.3 minutes of flight time</div></div>
+        <div class="hero-stat"><div class="n">-88.8%</div><div class="l">population-weighted exposure index (77% fewer people audible), for +4.3 minutes</div></div>
       </div>
 
       <h2>Architecture</h2>
@@ -152,7 +152,7 @@
         </div></div>
         <div class="step"><div class="tag">ACOUSTICS</div><div class="body">
           First-order model: published eVTOL overflight level (Joby S4, ~45.2 dBA at 500 m,
-          NASA/Joby 2022 flyover campaign), geometric spreading L(d) = L0 - 20 log10(d/d0),
+          NASA/Joby acoustic flight campaign, results published 2022), geometric spreading L(d) = L0 - 20 log10(d/d0),
           day/night ambient baselines. Labeled in the UI as a planning heuristic, not
           certification acoustics.
         </div></div>
@@ -186,9 +186,9 @@
         dashboards. Whisperways is <b>noise-equity tooling</b>: it treats community acceptance as
         the engineering constraint it actually is, computes who bears the noise burden of every
         corridor decision, and produces the document an operator would hand a neighborhood
-        council. The FAA's own integration roadmap names community noise as a central barrier;
-        industry research calls vertiport-era noise planning largely unexplored. That gap is this
-        product.
+        council. FAA integration planning ties community noise to the public acceptance it says
+        will decide the industry, and NASA's UAM noise research names vertiport-era noise
+        planning a major open gap. That gap is this product.
       </p>
 
       <div class="cols">
@@ -197,7 +197,7 @@
           <ul class="tight">
             <li><b>28 tests</b> (vitest): attenuation physics, kernel and raster properties, route optimality on synthetic grids, and real-city acceptance (the quiet route must beat direct exposure at bounded time cost on live census data).</li>
             <li><b>Pure engine</b>: acoustics + routing are dependency-free TypeScript modules; the UI and API are thin consumers.</li>
-            <li><b>Grounded AI by construction</b>: schema-constrained output, engine-only inputs, defensive parse. The brief cannot cite a number the engine did not compute.</li>
+            <li><b>Grounded AI by construction</b>: schema-constrained output, engine-only inputs, defensive parse: engine-only inputs, a fixed output schema, and a prompt that forbids invented numbers.</li>
             <li><b>Abuse guard proven, not assumed</b>: the rate limit was burst-tested live until it returned 429s.</li>
             <li><b>Spec-first</b>: behavior contract in <span class="kv">specs/whisperways-spec.md</span>; demo determinism via a disclosed frozen capture of a real run.</li>
           </ul>

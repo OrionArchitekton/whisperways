@@ -28,7 +28,7 @@
 
 ### SHOT metrics
 - target: dashboard
-- narration: Here is the trade. Four extra minutes of flight time. One hundred seventy thousand fewer people under audible noise. An eighty nine percent cut in population noise exposure.
+- narration: Here is the trade. Four extra minutes of flight time. Seventy seven percent fewer people under audible noise. And an eighty nine percent drop in the population weighted exposure index.
 - action: goto url="/?demo=1"
 - action: wait ms=2800
 - action: highlight selector="[data-focus='metrics']"
@@ -84,7 +84,7 @@
 
 ### SHOT sixty-seconds
 - target: dashboard
-- narration: And you can try this yourself in sixty seconds. Open whisperways dot vercel dot app, press plan corridors, and generate a brief. Everything you just watched is live, open source, and computed on the spot.
+- narration: And you can try this yourself in sixty seconds. It is all live and open source. Open whisperways dot vercel dot app, press plan corridors, and the engine computes your corridor on the spot. Then ask Claude for the brief.
 - action: goto url="/"
 - action: wait ms=2500
 - action: highlight selector="[data-focus='controls']"

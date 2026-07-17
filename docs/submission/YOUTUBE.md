@@ -14,7 +14,8 @@ neighborhood council.
 
 Headline result: LAX to Hollywood Burbank at night, the direct route is
 audible to about 221,000 people; the quiet corridor cuts that to about 51,000
-(89 percent less population noise exposure) for 4.3 extra minutes.
+people (77 percent fewer, an 89 percent cut in the population-weighted
+exposure index) for 4.3 extra minutes.
 
 Try it live: https://whisperways.vercel.app
 Demo mode: https://whisperways.vercel.app/?demo=1
