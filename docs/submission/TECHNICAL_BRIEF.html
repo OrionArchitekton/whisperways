@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Whisperways - Judges Technical Brief</title>
+    <style>
+      :root {
+        --paper: #f4f6f5;
+        --paper-deep: #e7edeb;
+        --ink: #0f1d24;
+        --ink-muted: #4e6169;
+        --rule: #9fb0ac;
+        --teal: #0d8a7a;
+        --teal-deep: #0a5e54;
+        --amber: #b07716;
+        --night: #10202b;
+        --serif: "DejaVu Serif", Georgia, serif;
+        --mono: "DejaVu Sans Mono", "Liberation Mono", monospace;
+        --sans: "DejaVu Sans", Arial, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      @page { size: letter; margin: 0; }
+      html, body { width: 8.5in; margin: 0; background: var(--paper); }
+      body {
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 10px;
+        line-height: 1.45;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      a { color: inherit; text-decoration: none; }
+      .page {
+        width: 8.5in; height: 11in;
+        padding: 0.46in 0.56in 0.4in;
+        overflow: hidden;
+        background: var(--paper);
+        page-break-after: always;
+      }
+      .page:last-child { page-break-after: auto; }
+      .top-rule { height: 6px; margin-bottom: 14px; background: var(--night); border-bottom: 2.5px solid var(--teal); }
+      .masthead { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--ink); }
+      .brand { font-family: var(--serif); font-size: 34px; letter-spacing: 0.5px; }
+      .brand em { color: var(--teal-deep); font-style: normal; }
+      .tagline { margin-top: 2px; font-size: 11.5px; color: var(--ink-muted); }
+      .meta { text-align: right; font-family: var(--mono); font-size: 8.6px; color: var(--ink-muted); line-height: 1.6; }
+      .meta b { color: var(--ink); }
+      h2 {
+        margin: 15px 0 6px;
+        font-family: var(--serif); font-size: 14.5px;
+        color: var(--night);
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 3px;
+      }
+      p { margin: 4px 0; }
+      .cols { display: flex; gap: 20px; }
+      .col { flex: 1; min-width: 0; }
+      .hero-panel {
+        margin-top: 10px;
+        display: flex; gap: 14px;
+        background: var(--night); color: #e7f4f1;
+        border-radius: 8px; padding: 12px 16px;
+      }
+      .hero-stat { flex: 1; }
+      .hero-stat .n { font-family: var(--serif); font-size: 24px; color: #57d9c6; }
+      .hero-stat .n.amber { color: #f0b155; }
+      .hero-stat .l { font-size: 8.6px; color: #a9c3bd; line-height: 1.35; margin-top: 2px; }
+      .pipeline { margin-top: 8px; }
+      .step { display: flex; gap: 10px; margin: 7px 0; }
+      .step .tag {
+        flex: 0 0 84px;
+        font-family: var(--mono); font-size: 8.2px; font-weight: bold;
+        color: var(--teal-deep);
+        border-right: 2px solid var(--teal);
+        padding-right: 8px; text-align: right;
+      }
+      .step .body { flex: 1; }
+      .chips { margin: 6px 0; }
+      .chip {
+        display: inline-block; margin: 2px 3px 2px 0; padding: 2px 8px;
+        border: 1px solid var(--rule); border-radius: 10px;
+        font-family: var(--mono); font-size: 8.2px; color: var(--ink-muted);
+        background: var(--paper-deep);
+      }
+      .honesty {
+        margin-top: 10px; padding: 10px 12px;
+        border-left: 3.5px solid var(--amber);
+        background: #f7f1e2;
+      }
+      .honesty h3 { margin: 0 0 4px; font-size: 10.5px; color: var(--amber); text-transform: uppercase; letter-spacing: 1px; }
+      ol.sixty { margin: 6px 0 0 18px; padding: 0; }
+      ol.sixty li { margin: 5px 0; }
+      .foot {
+        margin-top: 14px; padding-top: 8px;
+        border-top: 2px solid var(--ink);
+        display: flex; justify-content: space-between;
+        font-family: var(--mono); font-size: 8.2px; color: var(--ink-muted);
+      }
+      .kv { font-family: var(--mono); font-size: 8.6px; }
+      ul.tight { margin: 4px 0 4px 16px; padding: 0; }
+      ul.tight li { margin: 3px 0; }
+    </style>
+  </head>
+  <body>
+    <section class="page">
+      <div class="top-rule"></div>
+      <div class="masthead">
+        <div>
+          <div class="brand">Whisper<em>ways</em></div>
+          <div class="tagline">Noise-aware eVTOL flight corridors: route flight by who hears it.</div>
+        </div>
+        <div class="meta">
+          <b>HTCJ Aviation Futures Innovation Challenge</b><br />
+          Track: Best Advanced Air Mobility Innovation<br />
+          July 2026 · Dan Mercede, built with Claude<br />
+          live: <b>whisperways.vercel.app</b><br />
+          code: github.com/OrionArchitekton/whisperways
+        </div>
+      </div>
+
+      <h2>The problem: AAM is gated by noise, and nobody routes for it</h2>
+      <p>
+        Advanced air mobility will not be decided by range or battery chemistry. It will be
+        decided by community acceptance, and the gating complaint is noise: it drives vertiport
+        approvals, certification limits, and neighborhood opposition. Yet corridor planning today
+        optimizes distance and airspace. The people underneath the flight path are not in the
+        objective function. Whisperways puts them there.
+      </p>
+
+      <h2>What it does</h2>
+      <p>
+        Pick two Los Angeles vertiports. The engine returns the <b>direct route</b>
+        (distance-optimal) and the <b>quiet route</b> (population-noise-optimal), each with
+        distance, flight time, the number of people who can hear the aircraft above ambient, and a
+        population-weighted exposure index. Claude then drafts the <b>Community Impact Brief</b>: a
+        neighborhood-by-neighborhood account of what each place hears under each corridor, with the
+        tradeoff stated honestly, grounded only in engine-computed numbers.
+      </p>
+      <div class="hero-panel">
+        <div class="hero-stat"><div class="n amber">221,225</div><div class="l">people hear the DIRECT route: LAX to Hollywood Burbank, night ops, 8.4 min</div></div>
+        <div class="hero-stat"><div class="n">50,750</div><div class="l">people hear the QUIET corridor the engine found: 12.7 min</div></div>
+        <div class="hero-stat"><div class="n">-88.8%</div><div class="l">population noise exposure, for +4.3 minutes of flight time</div></div>
+      </div>
+
+      <h2>Architecture</h2>
+      <div class="pipeline">
+        <div class="step"><div class="tag">POPULATION</div><div class="body">
+          US Census Bureau 2020 tract centers of population (LA County, public domain), rasterized
+          to a 250 m grid: 185x156 cells, 1,408 tracts, 5.32M people. Build script and provenance
+          metadata committed with the artifact.
+        </div></div>
+        <div class="step"><div class="tag">ACOUSTICS</div><div class="body">
+          First-order model: published eVTOL overflight level (Joby S4, ~45.2 dBA at 500 m,
+          NASA/Joby 2022 flyover campaign), geometric spreading L(d) = L0 - 20 log10(d/d0),
+          day/night ambient baselines. Labeled in the UI as a planning heuristic, not
+          certification acoustics.
+        </div></div>
+        <div class="step"><div class="tag">ROUTING</div><div class="body">
+          Population is convolved with the audible-footprint kernel into a person-decibel cost
+          raster; Dijkstra then trades meters of detour against person-dB via a single bias
+          weight. Exposure accounting is footprint-based: each ground cell hears only its loudest
+          pass.
+        </div></div>
+        <div class="step"><div class="tag">AI BRIEF</div><div class="body">
+          One server route calls claude-opus-4-8 with a JSON-schema-constrained output. The prompt
+          receives only engine output (places, levels, tradeoffs) and forbids inventing numbers;
+          the response is shape-validated, length-capped, and scrubbed defensively.
+        </div></div>
+        <div class="step"><div class="tag">DELIVERY</div><div class="body">
+          Next.js App Router + MapLibre GL on Vercel. API key server-side only. The AI endpoint is
+          rate-limited through Upstash Redis, and the limit is burst-verified (concurrent 10-burst
+          returns 5x200 + 5x429).
+        </div></div>
+      </div>
+
+      <div class="foot"><span>Whisperways · Judges' Technical Brief</span><span>page 1 of 2</span></div>
+    </section>
+
+    <section class="page">
+      <div class="top-rule"></div>
+
+      <h2>The differentiator</h2>
+      <p>
+        AAM hackathon entries cluster on booking apps, delivery-route optimizers, and delay
+        dashboards. Whisperways is <b>noise-equity tooling</b>: it treats community acceptance as
+        the engineering constraint it actually is, computes who bears the noise burden of every
+        corridor decision, and produces the document an operator would hand a neighborhood
+        council. The FAA's own integration roadmap names community noise as a central barrier;
+        industry research calls vertiport-era noise planning largely unexplored. That gap is this
+        product.
+      </p>
+
+      <div class="cols">
+        <div class="col">
+          <h2>Engineering rigor</h2>
+          <ul class="tight">
+            <li><b>28 tests</b> (vitest): attenuation physics, kernel and raster properties, route optimality on synthetic grids, and real-city acceptance (the quiet route must beat direct exposure at bounded time cost on live census data).</li>
+            <li><b>Pure engine</b>: acoustics + routing are dependency-free TypeScript modules; the UI and API are thin consumers.</li>
+            <li><b>Grounded AI by construction</b>: schema-constrained output, engine-only inputs, defensive parse. The brief cannot cite a number the engine did not compute.</li>
+            <li><b>Abuse guard proven, not assumed</b>: the rate limit was burst-tested live until it returned 429s.</li>
+            <li><b>Spec-first</b>: behavior contract in <span class="kv">specs/whisperways-spec.md</span>; demo determinism via a disclosed frozen capture of a real run.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">TypeScript</span><span class="chip">Next.js 16</span><span class="chip">MapLibre GL</span><span class="chip">claude-opus-4-8</span><span class="chip">Vercel</span><span class="chip">Upstash</span><span class="chip">Census 2020</span><span class="chip">vitest x28</span>
+          </div>
+        </div>
+        <div class="col">
+          <h2>Challenges</h2>
+          <ul class="tight">
+            <li><b>Cruise eVTOLs are quiet.</b> Published overflight levels sit near daytime urban ambient, so the demo scenario is night residential operations, exactly when real noise complaints gate approvals.</li>
+            <li><b>Surrogate vs metric.</b> Dijkstra minimizes a path-sum cost while humans experience footprint exposure; property tests pin the two together across vertiport pairs.</li>
+            <li><b>Honest AI on thin data.</b> Early briefs had no neighborhoods to talk about because the quiet route avoided them all; the fix was reporting what each place gains between corridors, not just what it suffers.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="honesty">
+        <h3>Honesty notes</h3>
+        <p>
+          First-order acoustics (no atmospheric absorption, terrain, or directivity): numbers are
+          planning-grade comparisons between routes, not certifications. Vertiport set is curated
+          and illustrative. Demo mode serves a frozen result for deterministic capture; it is a
+          genuine output of the same engine and live Claude path, disclosed in the README. Built
+          end-to-end with Claude (Claude Fable 5 in Claude Code); the git Co-Authored-By trailers
+          record it.
+        </p>
+      </div>
+
+      <h2>Judge it in 60 seconds</h2>
+      <ol class="sixty">
+        <li>Open <b>whisperways.vercel.app</b> and press <b>Plan corridors</b>: the amber direct route and teal quiet corridor land on the map with live metrics.</li>
+        <li>Read the hero card: exposure reduction versus added minutes, computed from census population.</li>
+        <li>Press <b>Generate community impact brief</b>: Claude writes the neighborhood-by-neighborhood brief live from the engine's numbers.</li>
+      </ol>
+
+      <div class="foot"><span>whisperways.vercel.app · github.com/OrionArchitekton/whisperways</span><span>page 2 of 2</span></div>
+    </section>
+  </body>
+</html>
