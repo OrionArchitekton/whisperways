@@ -28,14 +28,21 @@ Demo-mode segments in this video use a disclosed frozen capture of a real
 engine run plus a real Claude call; the live app recomputes everything on
 demand.
 
-Chapters (reconcile stamps against the final render before upload):
+Chapters:
 0:00 The next hundred years of flight
-0:40 The problem is noise
-1:05 Whisperways: two corridors, one honest trade
-1:55 Live planning, any vertiport pair
-2:20 The AI community impact brief
-2:55 Engineering and honesty
-3:15 The vision
+0:19 The problem is noise
+0:40 This is Whisperways
+0:52 Two corridors over LA
+1:09 The trade
+1:21 How it works
+1:40 Honest by day
+2:04 Live planning
+2:16 The document that wins councils
+2:24 The AI community impact brief
+2:42 Engineering and honesty
+2:56 The vision
+3:13 Try it in 60 seconds
+3:30 The second century
 
 ## Tags (comma-separated)
 
