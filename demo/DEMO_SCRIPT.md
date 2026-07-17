@@ -41,7 +41,7 @@
 
 ### SHOT day-night
 - target: dashboard
-- narration: Ambient matters. By day the city is louder, and the audible footprint shrinks. By night the same corridor reaches ten times more people. Whisperways plans for both, because approvals are won and lost at night.
+- narration: Ambient matters, and the model is honest about it. By day, a cruising eVTOL at three hundred meters sits below the city's own noise, and Whisperways says so. Zero people above ambient. The direct route is already the quiet route. Night is a different story, and night is when approvals are won and lost.
 - action: goto url="/?from=lax&to=bur&scenario=day"
 - action: wait ms=2500
 - action: click selector="[data-focus='controls'] button"

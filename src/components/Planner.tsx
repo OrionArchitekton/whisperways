@@ -161,6 +161,21 @@ export default function Planner({
 
         {plan && (
           <section className="space-y-3" data-focus="metrics">
+            {plan.direct.peopleAudible === 0 && plan.quiet.peopleAudible === 0 ? (
+              <div className="rounded-xl border border-teal-800/60 bg-teal-950/40 p-4">
+                <p className="text-xs uppercase tracking-wider text-teal-300">
+                  Quiet by default
+                </p>
+                <p className="font-display mt-1 text-2xl text-teal-200">
+                  Inaudible over city ambient
+                </p>
+                <p className="text-sm text-slate-300">
+                  In this scenario the cruising aircraft sits below the ambient
+                  soundscape along both corridors, so the direct route is
+                  already the quiet route.
+                </p>
+              </div>
+            ) : (
             <div className="rounded-xl border border-teal-800/60 bg-teal-950/40 p-4">
               <p className="text-xs uppercase tracking-wider text-teal-300">
                 Quiet corridor result
@@ -173,6 +188,7 @@ export default function Planner({
                 time
               </p>
             </div>
+            )}
             <div className="grid grid-cols-2 gap-3 text-sm">
               <div className="rounded-lg border border-amber-800/50 bg-slate-900 p-3">
                 <p className="text-xs text-amber-300">Direct route</p>
