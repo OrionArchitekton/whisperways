@@ -17,9 +17,21 @@ export default async function Home({
   const params = await searchParams;
   const demo = params.demo === "1";
 
+  // Shareable links: /?from=dtla&to=smo&scenario=day seeds the selection.
+  const pick = (v: string | string[] | undefined) =>
+    typeof v === "string" ? v : undefined;
+  const ids = new Set(VERTIPORTS.map((v) => v.id));
+  let from = pick(params.from) ?? "lax";
+  let to = pick(params.to) ?? "bur";
+  if (!ids.has(from) || !ids.has(to) || from === to) {
+    from = "lax";
+    to = "bur";
+  }
+  const scenario = pick(params.scenario) === "day" ? ("day" as const) : ("night" as const);
+
   const initialSelection = demo
     ? (demoResult.selection as { from: string; to: string; scenario: "night" })
-    : { from: "lax", to: "bur", scenario: "night" as const };
+    : { from, to, scenario };
 
   return (
     <Planner
