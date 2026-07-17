@@ -131,7 +131,7 @@
       <h2>What it does</h2>
       <p>
         Pick two Los Angeles vertiports. The engine returns the <b>direct route</b>
-        (distance-optimal) and the <b>quiet route</b> (population-noise-optimal), each with
+        (the shortest grid path) and the <b>quiet route</b> (population-noise-optimized), each with
         distance, flight time, the number of people who can hear the aircraft above ambient, and a
         population-weighted exposure index. Claude then drafts the <b>Community Impact Brief</b>: a
         neighborhood-by-neighborhood account of what each place hears under each corridor, with the
@@ -165,7 +165,7 @@
         <div class="step"><div class="tag">AI BRIEF</div><div class="body">
           One server route calls claude-opus-4-8 with a JSON-schema-constrained output. The prompt
           receives only engine output (places, levels, tradeoffs) and forbids inventing numbers;
-          the response is shape-validated, length-capped, and scrubbed defensively.
+          the response is shape-validated, field-capped, and scrubbed defensively.
         </div></div>
         <div class="step"><div class="tag">DELIVERY</div><div class="body">
           Next.js App Router + MapLibre GL on Vercel. API key server-side only. The AI endpoint is
@@ -183,23 +183,23 @@
       <h2>The differentiator</h2>
       <p>
         AAM hackathon entries cluster on booking apps, delivery-route optimizers, and delay
-        dashboards. Whisperways is <b>noise-equity tooling</b>: it treats community acceptance as
+        dashboards. Whisperways is <b>population-noise planning tooling</b>: it treats community acceptance as
         the engineering constraint it actually is, computes who bears the noise burden of every
-        corridor decision, and produces the document an operator would hand a neighborhood
+        corridor decision, and produces the document an operator could hand a neighborhood
         council. FAA integration planning ties community noise to the public acceptance it says
         will decide the industry, and NASA's UAM noise research names vertiport-era noise
-        planning a major open gap. That gap is this product.
+        planning a major open gap. Whisperways prototypes one answer to that gap.
       </p>
 
       <div class="cols">
         <div class="col">
           <h2>Engineering rigor</h2>
           <ul class="tight">
-            <li><b>28 tests</b> (vitest): attenuation physics, kernel and raster properties, route optimality on synthetic grids, and real-city acceptance (the quiet route must beat direct exposure at bounded time cost on live census data).</li>
+            <li><b>28 tests</b> (vitest): attenuation physics, kernel and raster properties, route optimality on synthetic grids, and real-city acceptance (the quiet route must beat direct exposure at bounded time cost on the committed census grid).</li>
             <li><b>Pure engine</b>: acoustics + routing are dependency-free TypeScript modules; the UI and API are thin consumers.</li>
             <li><b>Grounded AI by construction</b>: schema-constrained output, engine-only inputs, defensive parse: engine-only inputs, a fixed output schema, and a prompt that forbids invented numbers.</li>
             <li><b>Abuse guard proven, not assumed</b>: the rate limit was burst-tested live until it returned 429s.</li>
-            <li><b>Spec-first</b>: behavior contract in <span class="kv">specs/whisperways-spec.md</span>; demo determinism via a disclosed frozen capture of a real run.</li>
+            <li><b>Spec-backed</b>: behavior contract in <span class="kv">specs/whisperways-spec.md</span>; demo determinism via a disclosed frozen capture of a real run.</li>
           </ul>
           <div class="chips">
             <span class="chip">TypeScript</span><span class="chip">Next.js 16</span><span class="chip">MapLibre GL</span><span class="chip">claude-opus-4-8</span><span class="chip">Vercel</span><span class="chip">Upstash</span><span class="chip">Census 2020</span><span class="chip">vitest x28</span>
@@ -209,7 +209,7 @@
           <h2>Challenges</h2>
           <ul class="tight">
             <li><b>Cruise eVTOLs are quiet.</b> Published overflight levels sit near daytime urban ambient, so the demo scenario is night residential operations, exactly when real noise complaints gate approvals.</li>
-            <li><b>Surrogate vs metric.</b> Dijkstra minimizes a path-sum cost while humans experience footprint exposure; property tests pin the two together across vertiport pairs.</li>
+            <li><b>Surrogate vs metric.</b> Dijkstra minimizes a path-sum cost while humans experience footprint exposure; property tests check the two against each other on synthetic grids and real-city pairs.</li>
             <li><b>Honest AI on thin data.</b> Early briefs had no neighborhoods to talk about because the quiet route avoided them all; the fix was reporting what each place gains between corridors, not just what it suffers.</li>
           </ul>
         </div>

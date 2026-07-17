@@ -1,0 +1,8 @@
+# Rate-limit burst evidence, whisperways.vercel.app/api/brief
+# Date: 2026-07-17T22:33:30Z
+# Method: 12 concurrent POSTs with invalid JSON bodies. The limiter runs before
+# body parsing, so allowed requests return 400 (invalid JSON) and rate-limited
+# requests return 429. No model tokens are spent by this probe.
+# Limit: 5 per 60s sliding window per IP (Upstash Redis).
+      5 400
+      7 429

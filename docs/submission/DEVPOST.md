@@ -28,9 +28,9 @@ planning today optimizes distance and airspace, not the people below.
 ### What Whisperways does
 
 Pick two vertiports in Los Angeles and Whisperways returns two corridors. The
-direct route is distance-optimal. The quiet route minimizes population noise
-exposure. For each you see distance, flight time, how many people can hear the
-aircraft above the ambient soundscape, and a population-weighted exposure
+direct route is distance-optimal. The quiet route is optimized against population noise
+exposure. For each you see distance, flight time, how many people the model predicts
+can hear the aircraft above the ambient soundscape, and a population-weighted exposure
 index. The headline result: LAX to Hollywood Burbank at night, the direct
 route is audible to about 221,000 people; the quiet corridor cuts that to
 about 51,000 people (77 percent fewer), and cuts the population-weighted

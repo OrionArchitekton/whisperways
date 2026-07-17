@@ -24,6 +24,9 @@ Code: https://github.com/OrionArchitekton/whisperways
 Built with Claude (Claude Fable 5 in Claude Code) for the HTCJ Aviation
 Futures Innovation Challenge, July 2026. The acoustic model is first-order and
 labeled as a planning heuristic; every number shown is computed by the engine.
+Demo-mode segments in this video use a disclosed frozen capture of a real
+engine run plus a real Claude call; the live app recomputes everything on
+demand.
 
 Chapters (reconcile stamps against the final render before upload):
 0:00 The next hundred years of flight

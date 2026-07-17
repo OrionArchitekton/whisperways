@@ -5,7 +5,7 @@
 Whisperways plans eVTOL routes over Los Angeles by who hears them, not just how
 far they fly. Pick two vertiports and it returns two corridors: the direct route
 and the quiet route, with the human cost of each. Then Claude drafts the
-community impact brief a vertiport operator would hand a neighborhood council.
+community impact brief a vertiport operator could hand a neighborhood council.
 
 Built for the HTCJ Aviation Futures Innovation Challenge (Advanced Air Mobility
 track), July 2026.
@@ -40,7 +40,8 @@ engine, computed over real census population data.
 ## How it works
 
 - **Population**: US Census Bureau 2020 tract centers of population (LA County,
-  public domain), rasterized to a 250 m grid covering 5.3M people
+  public domain), rasterized to a 250 m grid over the central-LA study area,
+  covering 5.3M people
   (`scripts/build-la-grid.mjs`, provenance in `src/data/la-grid.json` meta).
 - **Acoustics**: first-order model. Published eVTOL overflight level (Joby S4,
   about 45.2 dBA at 500 m, NASA/Joby acoustic flight campaign, results published 2022) with geometric
@@ -65,8 +66,8 @@ engine, computed over real census population data.
   hubs), not proposed facilities.
 - The demo mode (`/?demo=1`) serves a frozen result so video capture is
   deterministic. It is a genuine captured output: a real engine run plus one
-  live `claude-opus-4-8` call through the same prompt and schema as the live
-  endpoint (see `scripts/freeze-demo.ts` and the meta block in
+  live `claude-opus-4-8` call using the same model, prompt, schema, and parser
+  as the live endpoint (see `scripts/freeze-demo.ts` and the meta block in
   `src/data/demo-result.json`).
 - Landmark exposure uses nearest-pass geometry against curated neighborhood
   centroids; only places actually inside the audible footprint reach the model.
