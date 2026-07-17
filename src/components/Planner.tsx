@@ -184,8 +184,8 @@ export default function Planner({
                 -{plan.exposureReductionPct.toFixed(0)}%
               </p>
               <p className="text-sm text-slate-300">
-                population-weighted noise exposure, for +{fmtMin(addedMin)}
-                of flight time
+                population-weighted noise exposure, for +
+                {fmtMin(addedMin)}{" "}of flight time
               </p>
             </div>
             )}
