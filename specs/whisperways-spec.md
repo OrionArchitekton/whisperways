@@ -42,8 +42,11 @@ numbers) to Claude, which returns a structured brief: per-neighborhood exposure
 summary, tradeoff explanation, and mitigation talking points.
 Acceptance: the brief is generated live server-side (key never in client), is
 grounded ONLY in the provided JSON (prompt forbids inventing numbers or places),
-deterministic (temperature 0), and contains no long dashes (style ban in prompt +
-post-check). A real end-to-end call against the deployed URL is the ALLOW proof.
+shape-guaranteed via a JSON-schema-constrained output (no sampling parameters;
+current Claude models reject temperature overrides), and contains no long dashes
+(style ban in prompt + post-scrub). A real end-to-end call against the deployed
+URL is the ALLOW proof. Demo determinism comes from the frozen captured result
+(S3), not from sampling settings.
 
 ### S3. Demo mode (video-stable)
 Visiting `/?demo=1` server-renders the page with a prefilled vertiport pair AND a
