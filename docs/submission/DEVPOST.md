@@ -80,7 +80,7 @@ nextjs, typescript, maplibre-gl, anthropic-claude, vercel, upstash, census-data
 
 - Live app: https://whisperways.vercel.app (demo mode: https://whisperways.vercel.app/?demo=1)
 - Repo: https://github.com/OrionArchitekton/whisperways
-- Video: YOUTUBE_URL_PLACEHOLDER
+- Video: https://youtu.be/pAYEz0GL6KQ
 
 ## Team
 
